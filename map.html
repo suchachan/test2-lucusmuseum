@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Map - Lucas Museum of Narrative Art</title>
+    <link rel="stylesheet" href="design-system.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="map.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header with Logo and Back Button -->
+    <header class="map-header">
+        <button class="back-button" onclick="goBack()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 12H5m7-7l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Back</span>
+        </button>
+        <div class="museum-logo">
+            <div class="logo-text">
+                <span class="museum-logo-main">LM</span>
+                <div class="museum-logo-subtitle">
+                    <span>Lucas Museum</span>
+                    <span>of Narrative Art</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="map-container">
+        <!-- Content Container -->
+        <div class="map-content">
+            <!-- Left Navigation -->
+            <nav class="left-navigation">
+                <div class="nav-item active" data-view="map">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 6h18v12H3V6zm2 2v8h14V8H5z" fill="currentColor"/>
+                        <path d="M7 10h10v2H7v-2zm0 3h6v2H7v-2z" fill="currentColor"/>
+                    </svg>
+                </div>
+                
+                <div class="nav-item" data-view="analytics">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 3v18h18" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M7 16l4-4 4 4 6-6" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <circle cx="7" cy="16" r="1" fill="currentColor"/>
+                        <circle cx="11" cy="12" r="1" fill="currentColor"/>
+                        <circle cx="15" cy="16" r="1" fill="currentColor"/>
+                        <circle cx="21" cy="10" r="1" fill="currentColor"/>
+                    </svg>
+                </div>
+                
+                <div class="nav-item" data-view="messaging">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M8 9h8m-8 4h4" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                
+                <div class="nav-item" data-view="virtual">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
+                
+                <div class="nav-item" data-view="settings">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="m12 1 1.9 3.3a9 9 0 0 1 3.8 2.2l3.7-1.3 2.8 4.8-2.9 2.4a9.2 9.2 0 0 1 0 4.4l2.9 2.4-2.8 4.8-3.7-1.3a9 9 0 0 1-3.8 2.2L12 23l-1.9-3.3a9 9 0 0 1-3.8-2.2l-3.7 1.3-2.8-4.8 2.9-2.4a9.2 9.2 0 0 1 0-4.4L.8 9.1l2.8-4.8 3.7 1.3a9 9 0 0 1 3.8-2.2L12 1z" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
+            </nav>
+
+            <!-- Main Content Area -->
+            <main class="map-main">
+                <!-- Museum Map View -->
+                <div class="view map-view active">
+                    <div class="museum-floors-container">
+                        <div class="museum-floors">
+                    <!-- Rooftop -->
+                    <div class="floor rooftop">
+                        <div class="floor-label">Rooftop</div>
+                        <div class="floor-shape rooftop-shape">
+                            <div class="visitor-dot" style="top: 20%; left: 30%;"></div>
+                            <div class="visitor-dot" style="top: 60%; left: 70%;"></div>
+                            <div class="visitor-dot" style="top: 40%; left: 50%;"></div>
+                            <div class="visitor-dot" style="top: 80%; left: 40%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Support Column -->
+                    <div class="support-column column-1"></div>
+
+                    <!-- Fourth Floor -->
+                    <div class="floor fourth">
+                        <div class="floor-label">Fourth Floor</div>
+                        <div class="floor-shape fourth-shape">
+                            <div class="visitor-dot high" style="top: 30%; left: 20%;"></div>
+                            <div class="visitor-dot high" style="top: 50%; left: 40%;"></div>
+                            <div class="visitor-dot" style="top: 70%; left: 60%;"></div>
+                            <div class="visitor-dot" style="top: 40%; left: 80%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Support Column -->
+                    <div class="support-column column-2"></div>
+
+                    <!-- Third Floor -->
+                    <div class="floor third">
+                        <div class="floor-label">Third Floor</div>
+                        <div class="floor-shape third-shape">
+                            <div class="visitor-dot medium" style="top: 25%; left: 35%;"></div>
+                            <div class="visitor-dot medium" style="top: 45%; left: 55%;"></div>
+                            <div class="visitor-dot medium" style="top: 65%; left: 25%;"></div>
+                            <div class="visitor-dot" style="top: 75%; left: 70%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Support Column -->
+                    <div class="support-column column-3"></div>
+
+                    <!-- Second Floor -->
+                    <div class="floor second">
+                        <div class="floor-label">Second Floor</div>
+                        <div class="floor-shape second-shape">
+                            <div class="visitor-dot" style="top: 20%; left: 30%;"></div>
+                            <div class="visitor-dot" style="top: 40%; left: 70%;"></div>
+                            <div class="visitor-dot high" style="top: 60%; left: 45%;"></div>
+                            <div class="visitor-dot high" style="top: 80%; left: 25%;"></div>
+                            <div class="visitor-dot" style="top: 30%; left: 85%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Support Column -->
+                    <div class="support-column column-4"></div>
+
+                    <!-- First Floor -->
+                    <div class="floor first">
+                        <div class="floor-label">First Floor</div>
+                        <div class="floor-shape first-shape">
+                            <div class="visitor-dot high" style="top: 25%; left: 20%;"></div>
+                            <div class="visitor-dot high" style="top: 45%; left: 40%;"></div>
+                            <div class="visitor-dot medium" style="top: 65%; left: 60%;"></div>
+                            <div class="visitor-dot high" style="top: 35%; left: 75%;"></div>
+                            <div class="visitor-dot medium" style="top: 75%; left: 30%;"></div>
+                            <div class="visitor-dot" style="top: 55%; left: 85%;"></div>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Panel -->
+                    <aside class="key-panel">
+                        <h3 class="typography-h6">Key</h3>
+                        <div class="key-items">
+                            <div class="key-item">
+                                <div class="key-dot high"></div>
+                                <span class="typography-body2">High crowd</span>
+                            </div>
+                            <div class="key-item">
+                                <div class="key-dot medium"></div>
+                                <span class="typography-body2">Medium crowd</span>
+                            </div>
+                            <div class="key-item">
+                                <div class="key-dot low"></div>
+                                <span class="typography-body2">Low crowd</span>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- Map Controls -->
+                    <div class="map-controls">
+                        <button class="control-btn zoom-in">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                                <path d="m21 21-4.35-4.35M11 8v6m-3-3h6" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                        <button class="control-btn zoom-out">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                                <path d="m21 21-4.35-4.35M8 11h6" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                        <button class="control-btn fullscreen">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Analytics View -->
+                <div class="view analytics-view">
+                    <h2 class="typography-h2">Analytics Dashboard</h2>
+                    <p class="typography-body1">Visitor analytics and crowd density data will be displayed here.</p>
+                </div>
+
+                <!-- Messaging View -->
+                <div class="view messaging-view">
+                    <h2 class="typography-h2">Messaging Center</h2>
+                    <p class="typography-body1">Staff communication and visitor messaging system.</p>
+                </div>
+
+                <!-- Virtual View -->
+                <div class="view virtual-view">
+                    <h2 class="typography-h2">3D Interactive Virtual Exhibits</h2>
+                    <p class="typography-body1">Immersive 3D view of special exhibitions and galleries.</p>
+                </div>
+
+                <!-- Settings View -->
+                <div class="view settings-view">
+                    <h2 class="typography-h2">Settings</h2>
+                    <p class="typography-body1">System configuration and preferences.</p>
+                </div>
+            </main>
+        </div>
+    </div>    <script src="map.js"></script>
+</body>
+</html>

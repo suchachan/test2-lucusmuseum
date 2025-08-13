@@ -9,45 +9,54 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header with Logo -->
-    <header class="header">
-        <div class="museum-logo">
-            <div class="logo-text">
-                <span class="museum-logo-main">LM</span>
+    <!-- Sign-in Page -->
+    <main class="signin-container">
+        <div class="signin-card">
+            <!-- Museum Logo -->
+            <div class="signin-logo">
+                <div class="logo-image">
+                    <img src="nobackground.png" alt="Lucas Museum Logo" class="museum-logo-img"/>
+                </div>
                 <div class="museum-logo-subtitle">
                     <span>Lucas Museum</span>
                     <span>of Narrative Art</span>
                 </div>
             </div>
-        </div>
-        <div class="typography-caption bg-paper px-4 py-2 rounded-md text-secondary">
-            Thank you for your purchase.
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="hero-section">
-            <div class="hero-image">
-                <!-- The background image will be set via CSS -->
-            </div>
             
-            <div class="hero-content">
-                <div class="cta-group">
-                    <button class="btn btn-contained btn-secondary btn-large" onclick="navigateTo('personalize.html')">
-                        Personalize Your Visit
-                    </button>
-                    <button class="btn btn-outlined btn-primary btn-large" onclick="navigateTo('itinerary.html')">
-                        Recommend an Itinerary
-                    </button>
-                    <button class="btn btn-outlined btn-secondary btn-large" onclick="navigateTo('map.html')">
-                        Museum Map
-                    </button>
-                    <button class="btn btn-contained btn-primary btn-large" onclick="navigateTo('explore.html')">
-                        Start Exploring
-                    </button>
+            <!-- Sign-in Form -->
+            <form class="signin-form" id="signinForm" onsubmit="handleSignIn(event)">
+                <h2 class="signin-title">Admin User Sign in</h2>
+                
+                <div class="form-group">
+                    <label for="username" class="form-label">User Name</label>
+                    <input 
+                        type="text" 
+                        id="username" 
+                        name="username" 
+                        class="form-input" 
+                        placeholder="user name"
+                        required
+                    >
                 </div>
-            </div>
-        </main>
+                
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        name="password" 
+                        class="form-input" 
+                        placeholder="password"
+                        required
+                    >
+                </div>
+                
+                <button type="submit" class="btn btn-contained btn-primary btn-large signin-button">
+                    Sign In
+                </button>
+            </form>
+        </div>
+    </main>
 
         <!-- Accessibility Button -->
         <button class="floating-action" onclick="toggleAccessibility()">
@@ -59,15 +68,6 @@
                 <path d="M6 11l2-2" stroke="currentColor" stroke-width="2"/>
                 <path d="M18 11l-2-2" stroke="currentColor" stroke-width="2"/>
             </svg>
-        </button>
-
-        <!-- Call Alex Button -->
-        <button class="assistant-button" onclick="callAlex()">
-            <div class="assistant-avatar">👤</div>
-            <div class="assistant-text">
-                <div>Call Alex for</div>
-                <div>Assistance</div>
-            </div>
         </button>
 
     <script src="script.js"></script>

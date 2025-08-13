@@ -10,22 +10,61 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header with Logo and Back Button -->
+    <!-- Header with Logo and Navigation -->
     <header class="map-header">
-        <button class="back-button" onclick="goBack()">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M19 12H5m7-7l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <span>Back</span>
-        </button>
-        <div class="museum-logo">
-            <div class="logo-text">
-                <span class="museum-logo-main">LM</span>
+        <div class="header-left">
+            <button class="back-button" onclick="goBack()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 12H5m7-7l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Back</span>
+            </button>
+            <div class="museum-logo">
+                <div class="logo-image">
+                    <img src="nobackground.png" alt="Lucas Museum Logo" class="museum-logo-img"/>
+                </div>
                 <div class="museum-logo-subtitle">
                     <span>Lucas Museum</span>
                     <span>of Narrative Art</span>
                 </div>
             </div>
+        </div>
+        
+        <!-- Mode Navigation -->
+        <nav class="mode-navigation">
+            <div class="mode-tabs">
+                <button class="mode-tab active" id="visitorTab" onclick="switchMode('visitor')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>Visitor Mode</span>
+                </button>
+                <button class="mode-tab" id="workerTab" onclick="switchMode('worker')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" stroke="currentColor" stroke-width="2"/>
+                        <rect x="8" y="2" width="8" height="4" rx="1" ry="1" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span>Museum Worker</span>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- User Profile -->
+        <div class="user-profile">
+            <div class="user-avatar">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </div>
+            <button class="logout-button" onclick="logout()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" stroke="currentColor" stroke-width="2"/>
+                    <polyline points="16,17 21,12 16,7" stroke="currentColor" stroke-width="2"/>
+                    <line x1="21" y1="12" x2="9" y2="12" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
         </div>
     </header>
 
@@ -80,93 +119,128 @@
                 <div class="view map-view active">
                     <div class="museum-floors-container">
                         <div class="museum-floors">
-                    <!-- Rooftop -->
-                    <div class="floor rooftop">
-                        <div class="floor-label">Rooftop</div>
-                        <div class="floor-shape rooftop-shape">
-                            <div class="visitor-dot" style="top: 20%; left: 30%;"></div>
-                            <div class="visitor-dot" style="top: 60%; left: 70%;"></div>
-                            <div class="visitor-dot" style="top: 40%; left: 50%;"></div>
-                            <div class="visitor-dot" style="top: 80%; left: 40%;"></div>
+                            <!-- Rooftop -->
+                            <div class="floor rooftop">
+                                <div class="floor-label">Rooftop</div>
+                                <div class="floor-shape rooftop-shape">
+                                    <div class="visitor-dot facility-restaurant" style="top: 20%; left: 30%;" data-info="Rooftop Café"></div>
+                                    <div class="visitor-dot low" style="top: 60%; left: 70%;" data-info="Observation Deck"></div>
+                                    <div class="visitor-dot facility-elevator" style="top: 40%; left: 50%;" data-info="Elevator Access"></div>
+                                    <div class="visitor-dot low" style="top: 80%; left: 40%;" data-info="Garden Terrace"></div>
+                                </div>
+                            </div>
+
+                            <!-- Support Column -->
+                            <div class="support-column column-1"></div>
+
+                            <!-- Fourth Floor -->
+                            <div class="floor fourth">
+                                <div class="floor-label">Fourth Floor</div>
+                                <div class="floor-shape fourth-shape">
+                                    <div class="visitor-dot exhibit-art high" style="top: 30%; left: 20%;" data-info="Contemporary Art Gallery"></div>
+                                    <div class="visitor-dot exhibit-interactive high" style="top: 50%; left: 40%;" data-info="Digital Narratives"></div>
+                                    <div class="visitor-dot medium" style="top: 70%; left: 60%;" data-info="Special Exhibition"></div>
+                                    <div class="visitor-dot facility-restroom" style="top: 40%; left: 80%;" data-info="Restrooms"></div>
+                                    <div class="visitor-dot facility-elevator" style="top: 20%; left: 90%;" data-info="Elevator"></div>
+                                </div>
+                            </div>
+
+                            <!-- Support Column -->
+                            <div class="support-column column-2"></div>
+
+                            <!-- Third Floor -->
+                            <div class="floor third">
+                                <div class="floor-label">Third Floor</div>
+                                <div class="floor-shape third-shape">
+                                    <div class="visitor-dot exhibit-history medium" style="top: 25%; left: 35%;" data-info="Historical Narratives"></div>
+                                    <div class="visitor-dot exhibit-art medium" style="top: 45%; left: 55%;" data-info="Film & Television"></div>
+                                    <div class="visitor-dot medium" style="top: 65%; left: 25%;" data-info="Photography Collection"></div>
+                                    <div class="visitor-dot low" style="top: 75%; left: 70%;" data-info="Reading Area"></div>
+                                    <div class="visitor-dot facility-elevator" style="top: 30%; left: 85%;" data-info="Elevator"></div>
+                                </div>
+                            </div>
+
+                            <!-- Support Column -->
+                            <div class="support-column column-3"></div>
+
+                            <!-- Second Floor -->
+                            <div class="floor second">
+                                <div class="floor-label">Second Floor</div>
+                                <div class="floor-shape second-shape">
+                                    <div class="visitor-dot exhibit-interactive" style="top: 20%; left: 30%;" data-info="Interactive Storytelling"></div>
+                                    <div class="visitor-dot exhibit-art" style="top: 40%; left: 70%;" data-info="Visual Arts Gallery"></div>
+                                    <div class="visitor-dot high" style="top: 60%; left: 45%;" data-info="Main Exhibition Hall"></div>
+                                    <div class="visitor-dot high" style="top: 80%; left: 25%;" data-info="Lucas Collection"></div>
+                                    <div class="visitor-dot facility-restroom" style="top: 30%; left: 85%;" data-info="Restrooms"></div>
+                                    <div class="visitor-dot facility-elevator" style="top: 50%; left: 90%;" data-info="Elevator"></div>
+                                </div>
+                            </div>
+
+                            <!-- Support Column -->
+                            <div class="support-column column-4"></div>
+
+                            <!-- First Floor -->
+                            <div class="floor first">
+                                <div class="floor-label">First Floor</div>
+                                <div class="floor-shape first-shape">
+                                    <div class="visitor-dot high" style="top: 25%; left: 20%;" data-info="Main Entrance"></div>
+                                    <div class="visitor-dot exhibit-interactive high" style="top: 45%; left: 40%;" data-info="Welcome Experience"></div>
+                                    <div class="visitor-dot facility-restaurant medium" style="top: 65%; left: 60%;" data-info="Museum Store & Café"></div>
+                                    <div class="visitor-dot exhibit-history high" style="top: 35%; left: 75%;" data-info="Founding Stories"></div>
+                                    <div class="visitor-dot medium" style="top: 75%; left: 30%;" data-info="Information Desk"></div>
+                                    <div class="visitor-dot facility-elevator" style="top: 55%; left: 85%;" data-info="Main Elevator"></div>
+                                    <div class="visitor-dot facility-restroom" style="top: 80%; left: 80%;" data-info="Restrooms"></div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-
-                    <!-- Support Column -->
-                    <div class="support-column column-1"></div>
-
-                    <!-- Fourth Floor -->
-                    <div class="floor fourth">
-                        <div class="floor-label">Fourth Floor</div>
-                        <div class="floor-shape fourth-shape">
-                            <div class="visitor-dot high" style="top: 30%; left: 20%;"></div>
-                            <div class="visitor-dot high" style="top: 50%; left: 40%;"></div>
-                            <div class="visitor-dot" style="top: 70%; left: 60%;"></div>
-                            <div class="visitor-dot" style="top: 40%; left: 80%;"></div>
-                        </div>
-                    </div>
-
-                    <!-- Support Column -->
-                    <div class="support-column column-2"></div>
-
-                    <!-- Third Floor -->
-                    <div class="floor third">
-                        <div class="floor-label">Third Floor</div>
-                        <div class="floor-shape third-shape">
-                            <div class="visitor-dot medium" style="top: 25%; left: 35%;"></div>
-                            <div class="visitor-dot medium" style="top: 45%; left: 55%;"></div>
-                            <div class="visitor-dot medium" style="top: 65%; left: 25%;"></div>
-                            <div class="visitor-dot" style="top: 75%; left: 70%;"></div>
-                        </div>
-                    </div>
-
-                    <!-- Support Column -->
-                    <div class="support-column column-3"></div>
-
-                    <!-- Second Floor -->
-                    <div class="floor second">
-                        <div class="floor-label">Second Floor</div>
-                        <div class="floor-shape second-shape">
-                            <div class="visitor-dot" style="top: 20%; left: 30%;"></div>
-                            <div class="visitor-dot" style="top: 40%; left: 70%;"></div>
-                            <div class="visitor-dot high" style="top: 60%; left: 45%;"></div>
-                            <div class="visitor-dot high" style="top: 80%; left: 25%;"></div>
-                            <div class="visitor-dot" style="top: 30%; left: 85%;"></div>
-                        </div>
-                    </div>
-
-                    <!-- Support Column -->
-                    <div class="support-column column-4"></div>
-
-                    <!-- First Floor -->
-                    <div class="floor first">
-                        <div class="floor-label">First Floor</div>
-                        <div class="floor-shape first-shape">
-                            <div class="visitor-dot high" style="top: 25%; left: 20%;"></div>
-                            <div class="visitor-dot high" style="top: 45%; left: 40%;"></div>
-                            <div class="visitor-dot medium" style="top: 65%; left: 60%;"></div>
-                            <div class="visitor-dot high" style="top: 35%; left: 75%;"></div>
-                            <div class="visitor-dot medium" style="top: 75%; left: 30%;"></div>
-                            <div class="visitor-dot" style="top: 55%; left: 85%;"></div>
-                        </div>
-                    </div>
-                        </div>
-                    </div>
-
-                    <!-- Key Panel -->
+                    </div>                    <!-- Key Panel -->
                     <aside class="key-panel">
-                        <h3 class="typography-h6">Key</h3>
-                        <div class="key-items">
-                            <div class="key-item">
-                                <div class="key-dot high"></div>
-                                <span class="typography-body2">High crowd</span>
+                        <h3 class="typography-h6">Legend</h3>
+                        <div class="key-section">
+                            <h4 class="typography-caption">Crowd Density</h4>
+                            <div class="key-items">
+                                <div class="key-item">
+                                    <div class="key-dot high"></div>
+                                    <span class="typography-body2">High crowd</span>
+                                </div>
+                                <div class="key-item">
+                                    <div class="key-dot medium"></div>
+                                    <span class="typography-body2">Medium crowd</span>
+                                </div>
+                                <div class="key-item">
+                                    <div class="key-dot low"></div>
+                                    <span class="typography-body2">Low crowd</span>
+                                </div>
                             </div>
-                            <div class="key-item">
-                                <div class="key-dot medium"></div>
-                                <span class="typography-body2">Medium crowd</span>
-                            </div>
-                            <div class="key-item">
-                                <div class="key-dot low"></div>
-                                <span class="typography-body2">Low crowd</span>
+                        </div>
+                        
+                        <div class="key-section">
+                            <h4 class="typography-caption">Facilities</h4>
+                            <div class="key-items">
+                                <div class="key-item">
+                                    <div class="key-icon">🎨</div>
+                                    <span class="typography-body2">Art Gallery</span>
+                                </div>
+                                <div class="key-item">
+                                    <div class="key-icon">📚</div>
+                                    <span class="typography-body2">Historical</span>
+                                </div>
+                                <div class="key-item">
+                                    <div class="key-icon">🎮</div>
+                                    <span class="typography-body2">Interactive</span>
+                                </div>
+                                <div class="key-item">
+                                    <div class="key-icon">🍽</div>
+                                    <span class="typography-body2">Restaurant</span>
+                                </div>
+                                <div class="key-item">
+                                    <div class="key-icon">🚻</div>
+                                    <span class="typography-body2">Restroom</span>
+                                </div>
+                                <div class="key-item">
+                                    <div class="key-icon">⬆</div>
+                                    <span class="typography-body2">Elevator</span>
+                                </div>
                             </div>
                         </div>
                     </aside>

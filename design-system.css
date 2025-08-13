@@ -8,12 +8,12 @@
    =============================== */
 
 :root {
-  /* Primary Palette - Sophisticated Blues */
-  --color-primary-lighter: #E3F2FD;
-  --color-primary-light: #90CAF9;
-  --color-primary-main: #2196F3;
-  --color-primary-dark: #1976D2;
-  --color-primary-darker: #0D47A1;
+  /* Primary Palette - Warm Orange */
+  --color-primary-lighter: #FFF3E0;
+  --color-primary-light: #FFCC80;
+  --color-primary-main: #FF8C00;
+  --color-primary-dark: #F57C00;
+  --color-primary-darker: #E65100;
   
   /* Secondary Palette - Elegant Greys */
   --color-secondary-lighter: #F5F5F6;
@@ -782,27 +782,34 @@
 
 .floating-action {
   position: fixed;
-  bottom: var(--spacing-6);
-  right: var(--spacing-6);
+  bottom: 24px;
+  right: 24px;
   width: 56px;
   height: 56px;
-  border-radius: var(--radius-full);
-  background-color: var(--color-primary-main);
-  color: var(--color-common-white);
-  border: none;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-z8);
-  transition: all var(--transition-duration-standard) var(--transition-easing-easeInOut);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: var(--z-fab);
 }
 
 .floating-action:hover {
-  background-color: var(--color-primary-dark);
-  box-shadow: var(--shadow-z16);
-  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 
+    0 12px 48px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .assistant-button {

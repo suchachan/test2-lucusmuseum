@@ -1,3 +1,70 @@
+// ===============================
+// AUTHENTICATION & NAVIGATION
+// ===============================
+
+// Sign-in form handler
+function handleSignIn(event) {
+    event.preventDefault();
+    
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    
+    // Simple validation (in real app, this would be server-side)
+    if (username && password) {
+        // Store user session (in real app, use proper authentication)
+        sessionStorage.setItem('userLoggedIn', 'true');
+        sessionStorage.setItem('username', username);
+        
+        // Redirect to map page
+        window.location.href = 'map.html';
+    } else {
+        alert('Please enter both username and password');
+    }
+}
+
+// Check if user is logged in
+function checkAuth() {
+    const isLoggedIn = sessionStorage.getItem('userLoggedIn');
+    const currentPage = window.location.pathname.split('/').pop();
+    
+    // If not logged in and not on index page, redirect to login
+    if (!isLoggedIn && currentPage !== 'index.html' && currentPage !== '') {
+        window.location.href = 'index.html';
+    }
+}
+
+// Logout function
+function logout() {
+    sessionStorage.clear();
+    window.location.href = 'index.html';
+}
+
+// Go back function
+function goBack() {
+    logout(); // For now, going back means logging out
+}
+
+// Mode switching
+function switchMode(mode) {
+    // Update active tab
+    document.querySelectorAll('.mode-tab').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    
+    if (mode === 'visitor') {
+        document.getElementById('visitorTab').classList.add('active');
+        // Show visitor-specific features
+        document.body.setAttribute('data-mode', 'visitor');
+    } else if (mode === 'worker') {
+        document.getElementById('workerTab').classList.add('active');
+        // Show worker-specific features
+        document.body.setAttribute('data-mode', 'worker');
+    }
+    
+    // In a real app, this would update the UI to show different features
+    console.log(`Switched to ${mode} mode`);
+}
+
 // Navigation function for CTA buttons
 function navigateTo(page) {
     window.location.href = page;
@@ -67,12 +134,24 @@ document.addEventListener('keydown', function(event) {
 
 // Add focus management for better accessibility
 document.addEventListener('DOMContentLoaded', function() {
+    // Check authentication on page load
+    checkAuth();
+    
+    // Initialize visitor mode by default
+    if (document.getElementById('visitorTab')) {
+        switchMode('visitor');
+    }
+    
     // Add focus styles for keyboard navigation
     const style = document.createElement('style');
     style.textContent = `
         .cta-button:focus,
         .accessibility-btn:focus,
-        .call-alex-btn:focus {
+        .call-alex-btn:focus,
+        .form-input:focus,
+        .signin-button:focus,
+        .mode-tab:focus,
+        .logout-button:focus {
             outline: 3px solid #4A90E2;
             outline-offset: 2px;
         }

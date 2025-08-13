@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Museum of Narrative Art</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Logo -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-text">
+                    <span class="logo-main">LM</span>
+                    <div class="logo-subtitle">
+                        <span>Lucas Museum</span>
+                        <span>of Narrative Art</span>
+                    </div>
+                </div>
+            </div>
+            <div class="thank-you">Thank you for your purchase.</div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="hero-image">
+                <!-- The background image will be set via CSS -->
+            </div>
+            
+            <div class="cta-buttons">
+                <button class="cta-button" onclick="navigateTo('personalize.html')">
+                    Personalize Your Visit
+                </button>
+                <button class="cta-button" onclick="navigateTo('itinerary.html')">
+                    Recommend an Itinerary
+                </button>
+                <button class="cta-button primary" onclick="navigateTo('explore.html')">
+                    Start Exploring
+                </button>
+            </div>
+        </main>
+
+        <!-- Accessibility Button -->
+        <button class="accessibility-btn" onclick="toggleAccessibility()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="7" r="2" stroke="currentColor" stroke-width="2"/>
+                <path d="M10 14v5" stroke="currentColor" stroke-width="2"/>
+                <path d="M14 14v5" stroke="currentColor" stroke-width="2"/>
+                <path d="M8 11h8" stroke="currentColor" stroke-width="2"/>
+                <path d="M6 11l2-2" stroke="currentColor" stroke-width="2"/>
+                <path d="M18 11l-2-2" stroke="currentColor" stroke-width="2"/>
+            </svg>
+        </button>
+
+        <!-- Call Alex Button -->
+        <button class="call-alex-btn" onclick="callAlex()">
+            <div class="alex-avatar"></div>
+            <div class="alex-text">
+                <span>Call Alex for</span>
+                <span>Assistance</span>
+            </div>
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

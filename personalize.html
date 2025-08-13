@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalize Your Visit - Lucas Museum</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container page-container">
+        <header class="header">
+            <div class="logo">
+                <div class="logo-text">
+                    <span class="logo-main">LM</span>
+                    <div class="logo-subtitle">
+                        <span>Lucas Museum</span>
+                        <span>of Narrative Art</span>
+                    </div>
+                </div>
+            </div>
+            <button class="back-btn" onclick="window.location.href='index.html'">← Back to Home</button>
+        </header>
+
+        <main class="page-content">
+            <div class="page-header">
+                <h1>Personalize Your Visit</h1>
+                <p>Customize your museum experience based on your interests and preferences.</p>
+            </div>
+
+            <div class="personalization-form">
+                <div class="form-section">
+                    <h3>What interests you most?</h3>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="interest" value="contemporary"> Contemporary Art</label>
+                        <label><input type="checkbox" name="interest" value="photography"> Photography</label>
+                        <label><input type="checkbox" name="interest" value="digital"> Digital Media</label>
+                        <label><input type="checkbox" name="interest" value="sculpture"> Sculpture</label>
+                        <label><input type="checkbox" name="interest" value="painting"> Painting</label>
+                        <label><input type="checkbox" name="interest" value="installation"> Installation Art</label>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>How much time do you have?</h3>
+                    <div class="radio-group">
+                        <label><input type="radio" name="duration" value="30min"> 30 minutes</label>
+                        <label><input type="radio" name="duration" value="1hour"> 1 hour</label>
+                        <label><input type="radio" name="duration" value="2hours"> 2 hours</label>
+                        <label><input type="radio" name="duration" value="halfday"> Half day</label>
+                        <label><input type="radio" name="duration" value="fullday"> Full day</label>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Accessibility needs?</h3>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="accessibility" value="wheelchair"> Wheelchair accessible routes</label>
+                        <label><input type="checkbox" name="accessibility" value="audio"> Audio descriptions</label>
+                        <label><input type="checkbox" name="accessibility" value="sign"> Sign language interpretation</label>
+                        <label><input type="checkbox" name="accessibility" value="quiet"> Quiet spaces</label>
+                    </div>
+                </div>
+
+                <button class="cta-button primary" onclick="generatePersonalizedPlan()">Create My Personal Tour</button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function generatePersonalizedPlan() {
+            alert('Your personalized tour has been created!\n\nBased on your preferences, we recommend:\n- Starting with the Contemporary Gallery\n- Visiting the Photography Exhibition\n- Ending at the Digital Media Installation\n\nEstimated duration: 2 hours');
+        }
+    </script>
+</body>
+</html>

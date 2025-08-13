@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommended Itinerary - Lucas Museum</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container page-container">
+        <header class="header">
+            <div class="logo">
+                <div class="logo-text">
+                    <span class="logo-main">LM</span>
+                    <div class="logo-subtitle">
+                        <span>Lucas Museum</span>
+                        <span>of Narrative Art</span>
+                    </div>
+                </div>
+            </div>
+            <button class="back-btn" onclick="window.location.href='index.html'">← Back to Home</button>
+        </header>
+
+        <main class="page-content">
+            <div class="page-header">
+                <h1>Recommended Itinerary</h1>
+                <p>Curated experiences designed by our museum experts.</p>
+            </div>
+
+            <div class="itinerary-options">
+                <div class="itinerary-card">
+                    <h3>First-Time Visitor</h3>
+                    <div class="duration">2-3 hours</div>
+                    <ul>
+                        <li>Welcome Gallery & Orientation</li>
+                        <li>Narrative Art Through History</li>
+                        <li>Interactive Digital Storytelling</li>
+                        <li>Contemporary Voices Exhibition</li>
+                        <li>Museum Shop & Café</li>
+                    </ul>
+                    <button class="cta-button" onclick="selectItinerary('first-time')">Choose This Path</button>
+                </div>
+
+                <div class="itinerary-card">
+                    <h3>Art Enthusiast</h3>
+                    <div class="duration">4-5 hours</div>
+                    <ul>
+                        <li>Curatorial Highlights Tour</li>
+                        <li>Behind-the-Scenes Access</li>
+                        <li>Artist Interview Screenings</li>
+                        <li>Special Collections Viewing</li>
+                        <li>Wine & Art Discussion</li>
+                    </ul>
+                    <button class="cta-button" onclick="selectItinerary('enthusiast')">Choose This Path</button>
+                </div>
+
+                <div class="itinerary-card">
+                    <h3>Family Adventure</h3>
+                    <div class="duration">2-3 hours</div>
+                    <ul>
+                        <li>Kids' Interactive Discovery Zone</li>
+                        <li>Family-Friendly Story Gallery</li>
+                        <li>Hands-On Art Workshop</li>
+                        <li>Scavenger Hunt Challenge</li>
+                        <li>Family Photo Opportunities</li>
+                    </ul>
+                    <button class="cta-button" onclick="selectItinerary('family')">Choose This Path</button>
+                </div>
+
+                <div class="itinerary-card featured">
+                    <h3>Quick Highlights</h3>
+                    <div class="duration">1 hour</div>
+                    <ul>
+                        <li>Greatest Hits Gallery</li>
+                        <li>Signature Installation</li>
+                        <li>Panoramic City Views</li>
+                        <li>Gift Shop Browse</li>
+                    </ul>
+                    <button class="cta-button primary" onclick="selectItinerary('quick')">Choose This Path</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function selectItinerary(type) {
+            const itineraries = {
+                'first-time': 'First-Time Visitor Experience',
+                'enthusiast': 'Art Enthusiast Deep Dive',
+                'family': 'Family Adventure Tour',
+                'quick': 'Quick Highlights Tour'
+            };
+            
+            alert(`You've selected: ${itineraries[type]}\n\nYour itinerary has been saved to your profile. You'll receive a detailed map and timeline via email.\n\nEnjoy your visit!`);
+        }
+    </script>
+</body>
+</html>

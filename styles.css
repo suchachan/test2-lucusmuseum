@@ -61,6 +61,11 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'Inter', system-ui, sans-serif;
     background-color: var(--bg-default);
+    background-image: url('Level 8.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: var(--text-primary);
     line-height: var(--typography-body1-line-height);
     margin: 0;

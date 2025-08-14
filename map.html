@@ -269,8 +269,196 @@
 
                 <!-- Analytics View -->
                 <div class="view analytics-view">
-                    <h2 class="typography-h2">Analytics Dashboard</h2>
-                    <p class="typography-body1">Visitor analytics and crowd density data will be displayed here.</p>
+                    <!-- Analytics Header -->
+                    <div class="analytics-header">
+                        <div class="analytics-search">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/>
+                                <path d="m21 21-4.35-4.35" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <input type="text" placeholder="Filter or search" />
+                        </div>
+                    </div>
+
+                    <!-- Stats Cards -->
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <div class="stat-number">210</div>
+                            <div class="stat-label">Total visitors</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">136</div>
+                            <div class="stat-label">App users</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">0:05:23</div>
+                            <div class="stat-label">Avg wait time</div>
+                        </div>
+                    </div>
+
+                    <!-- Exhibition Table -->
+                    <div class="exhibition-table-container">
+                        <table class="exhibition-table">
+                            <thead>
+                                <tr>
+                                    <th>Exhibition</th>
+                                    <th># of visitors</th>
+                                    <th>Queue</th>
+                                    <th>In-app queue</th>
+                                    <th>Avg wait time</th>
+                                    <th>Avg visiting time</th>
+                                    <th>Tags</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="exhibition-icon">
+                                            <div class="floor-icon">🏛️</div>
+                                            <div class="exhibition-info">
+                                                <div class="exhibition-name">Cinematic Hall</div>
+                                                <div class="floor-label-small">FIRST FLOOR</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>6</td>
+                                    <td><span class="queue-status no">no</span></td>
+                                    <td>-</td>
+                                    <td><span class="time-display">00:04:03</span></td>
+                                    <td><span class="time-display">00:15:03</span></td>
+                                    <td>-</td>
+                                    <td>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="12" r="1" fill="currentColor"/>
+                                            <circle cx="12" cy="5" r="1" fill="currentColor"/>
+                                            <circle cx="12" cy="19" r="1" fill="currentColor"/>
+                                        </svg>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="exhibition-icon">
+                                            <div class="floor-icon">🏛️</div>
+                                            <div class="exhibition-info">
+                                                <div class="exhibition-name">Echo Hall</div>
+                                                <div class="floor-label-small">THIRD FLOOR</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>30</td>
+                                    <td><span class="queue-status yes">yes</span></td>
+                                    <td>13</td>
+                                    <td><span class="time-display">00:04:03</span></td>
+                                    <td><span class="time-display">00:15:03</span></td>
+                                    <td><span class="status-tag overcrowding">🔴 Overcrowding</span></td>
+                                    <td>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="12" r="1" fill="currentColor"/>
+                                            <circle cx="12" cy="5" r="1" fill="currentColor"/>
+                                            <circle cx="12" cy="19" r="1" fill="currentColor"/>
+                                        </svg>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="exhibition-icon">
+                                            <div class="floor-icon">🏛️</div>
+                                            <div class="exhibition-info">
+                                                <div class="exhibition-name">Epic Realms</div>
+                                                <div class="floor-label-small">SECOND FLOOR</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>15</td>
+                                    <td><span class="queue-status yes">yes</span></td>
+                                    <td>5</td>
+                                    <td><span class="time-display">00:04:03</span></td>
+                                    <td><span class="time-display">00:15:03</span></td>
+                                    <td>-</td>
+                                    <td>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="12" r="1" fill="currentColor"/>
+                                            <circle cx="12" cy="5" r="1" fill="currentColor"/>
+                                            <circle cx="12" cy="19" r="1" fill="currentColor"/>
+                                        </svg>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="exhibition-icon">
+                                            <div class="floor-icon">🏛️</div>
+                                            <div class="exhibition-info">
+                                                <div class="exhibition-name">The Auteur Gallery</div>
+                                                <div class="floor-label-small">FIRST FLOOR</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>9</td>
+                                    <td><span class="queue-status no">no</span></td>
+                                    <td>-</td>
+                                    <td><span class="time-display">00:04:03</span></td>
+                                    <td><span class="time-display">00:15:03</span></td>
+                                    <td>-</td>
+                                    <td>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="12" r="1" fill="currentColor"/>
+                                            <circle cx="12" cy="5" r="1" fill="currentColor"/>
+                                            <circle cx="12" cy="19" r="1" fill="currentColor"/>
+                                        </svg>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="exhibition-icon">
+                                            <div class="floor-icon">🏛️</div>
+                                            <div class="exhibition-info">
+                                                <div class="exhibition-name">The Garden</div>
+                                                <div class="floor-label-small">FIRST FLOOR</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>0</td>
+                                    <td><span class="queue-status no">no</span></td>
+                                    <td>-</td>
+                                    <td><span class="time-display">00:04:03</span></td>
+                                    <td><span class="time-display">00:15:03</span></td>
+                                    <td><span class="status-tag empty">Empty Exhibit</span></td>
+                                    <td>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="12" r="1" fill="currentColor"/>
+                                            <circle cx="12" cy="5" r="1" fill="currentColor"/>
+                                            <circle cx="12" cy="19" r="1" fill="currentColor"/>
+                                        </svg>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="exhibition-icon">
+                                            <div class="floor-icon">🏛️</div>
+                                            <div class="exhibition-info">
+                                                <div class="exhibition-name">Vision</div>
+                                                <div class="floor-label-small">ROOFTOP</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>18</td>
+                                    <td><span class="queue-status no">no</span></td>
+                                    <td>-</td>
+                                    <td><span class="time-display">00:04:03</span></td>
+                                    <td><span class="time-display">00:15:03</span></td>
+                                    <td>-</td>
+                                    <td>
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="12" cy="12" r="1" fill="currentColor"/>
+                                            <circle cx="12" cy="5" r="1" fill="currentColor"/>
+                                            <circle cx="12" cy="19" r="1" fill="currentColor"/>
+                                        </svg>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
                 <!-- Messaging View -->
